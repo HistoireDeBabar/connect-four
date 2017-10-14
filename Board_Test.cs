@@ -36,7 +36,7 @@ namespace Tests {
         [Fact]
         public void CheckEmptyColumn() {
             var board = new ConnectFourBoard();
-            Assert.Equal(false, board.CheckColumn(0));
+            Assert.False(board.CheckColumn(0));
         }
 
         [Fact]
@@ -48,7 +48,7 @@ namespace Tests {
             board.PutCounter(0, "0");
             board.PutCounter(0, "*");
             board.PutCounter(0, "0");
-            Assert.Equal(false, board.CheckColumn(0));
+            Assert.False(board.CheckColumn(0));
         }
         
         [Fact]
@@ -58,13 +58,13 @@ namespace Tests {
             board.PutCounter(0, "*");
             board.PutCounter(0, "*");
             board.PutCounter(0, "*");
-            Assert.Equal(true, board.CheckColumn(0));
+            Assert.True(board.CheckColumn(0));
         }
 
         [Fact]
         public void CheckEmptyRow() {
             var board = new ConnectFourBoard();
-            Assert.Equal(false, board.CheckRow(0));
+            Assert.False(board.CheckRow(0));
         }
 
         [Fact]
@@ -77,7 +77,7 @@ namespace Tests {
             board.PutCounter(4, "*");
             board.PutCounter(5, "0");
             board.PutCounter(6, "*");
-            Assert.Equal(false, board.CheckRow(0));
+            Assert.False(board.CheckRow(0));
         }
 
         [Fact]
@@ -90,7 +90,7 @@ namespace Tests {
             board.PutCounter(4, "0");
             board.PutCounter(5, "*");
             board.PutCounter(6, "*");
-            Assert.Equal(true, board.CheckRow(0));
+            Assert.True(board.CheckRow(0));
         }
 
         [Fact]
@@ -103,7 +103,7 @@ namespace Tests {
             board.PutCounter(4, "0");
             board.PutCounter(5, "0");
             board.PutCounter(6, "*");
-            Assert.Equal(false, board.CheckRow(0));
+            Assert.False(board.CheckRow(0));
         }
 
 
@@ -117,7 +117,7 @@ namespace Tests {
                 new List<string>() { "0", "0", "0" },
                 new List<string>() { "0", "0" },
             };
-            Assert.Equal(false, board.CheckRow(3));
+            Assert.False(board.CheckRow(3));
         }
 
         [Fact]
@@ -246,7 +246,7 @@ namespace Tests {
                 new List<string>() { "*", "0" },
                 new List<string>() { "0" },
             };
-            Assert.Equal(true, board.CheckLeftHorizontal(3,2));
+            Assert.True(board.CheckLeftHorizontal(3,2));
         }
 
         [Fact]
@@ -262,7 +262,7 @@ namespace Tests {
                 new List<string>() { "*", "0" },
                 new List<string>() { "0" },
             };
-            Assert.Equal(false, board.CheckLeftHorizontal(3,2));
+            Assert.False(board.CheckLeftHorizontal(3,2));
         }
 
         [Fact]
@@ -278,7 +278,7 @@ namespace Tests {
                 new List<string>() { "0", "0", "0", "0", "*" },
                 new List<string>() { "0", "0", "0", "0", "0", "*" },
             };
-            Assert.Equal(true, board.CheckRightHorizontal(3,2));
+            Assert.True(board.CheckRightHorizontal(3,2));
         }
 
         [Fact]
@@ -294,7 +294,7 @@ namespace Tests {
                 new List<string>() { "0", "0", "0", "0", "*" },
                 new List<string>() { "0", "0", "0", "0", "0", "*" },
             };
-            Assert.Equal(false, board.CheckRightHorizontal(3,2));
+            Assert.False(board.CheckRightHorizontal(3,2));
         }
 
         [Fact]
@@ -309,7 +309,7 @@ namespace Tests {
                 new List<string>() { "*", "*", "0", "0", "*" },
                 new List<string>() { "0", "0", "*", "0", "*", "*" },
             };
-            Assert.Equal(true, board.CheckGame(4,3));
+            Assert.True(board.CheckGame(4,3));
         }
 
         [Fact]
@@ -324,7 +324,7 @@ namespace Tests {
                 new List<string>() { "*", "*", },
                 new List<string>() { "0", "*" },
             };
-            Assert.Equal(true, board.CheckGame(6,1));
+            Assert.True(board.CheckGame(6,1));
         }
 
         [Fact]
@@ -339,7 +339,7 @@ namespace Tests {
                 new List<string>() { "*", "*", },
                 new List<string>() { "0", "*" },
             };
-            Assert.Equal(true, board.CheckGame(4,3));
+            Assert.True(board.CheckGame(4,3));
         }
 
         [Fact]
@@ -354,7 +354,7 @@ namespace Tests {
                 new List<string>() { "*", "*", },
                 new List<string>() { "0", "*" },
             };
-            Assert.Equal(true, board.CheckGame(1,3));
+            Assert.True(board.CheckGame(1,3));
         }
 
         [Fact]
@@ -369,7 +369,7 @@ namespace Tests {
                 new List<string>() { "*", "*", },
                 new List<string>() { "0", "*" },
             };
-            Assert.Equal(false, board.CheckGame(1,3));
+            Assert.False(board.CheckGame(1,3));
         }
     }
 

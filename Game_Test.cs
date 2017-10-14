@@ -28,8 +28,8 @@ namespace Tests {
             var mockPlayer2 = new MockPlayerThrowsErrorMove();
             var game = new ConnectFourGame(board, mockPlayer, mockPlayer2);
             game.Play();
-            Assert.Equal(mockPlayer.MoveCount, 4);
-            Assert.Equal(mockPlayer2.MoveCount, 4);
+            Assert.Equal(4, mockPlayer.MoveCount);
+            Assert.Equal(4, mockPlayer2.MoveCount);
         }
 
 
@@ -81,7 +81,7 @@ namespace Tests {
             var player2 = new MockPlayerReturnsZero();
             var game = new ConnectFourGame(board, mockPlayer, player2);
             game.Play();
-            Assert.Equal(board.called, 2);
+            Assert.Equal(2, board.called);
         }
 
         public class MockBoardReturnsCheckTrue: IBoard {
@@ -107,7 +107,7 @@ namespace Tests {
                 return 0;
             }
         }
-          
+
         [Fact]
         public void ReturnsFromGameWhenAPlayerWins() {
             var board = new MockBoardReturnsCheckTrue();
@@ -115,8 +115,8 @@ namespace Tests {
             var mockLoser = new MockPlayerReturnsZero("0");
             var game = new ConnectFourGame(board, mockWinner, mockLoser);
             game.Play();
-            Assert.Equal(board.Called, 1);
-            Assert.Equal(board.WinnersToken, "!");
+            Assert.Equal(1, board.Called);
+            Assert.Equal("!", board.WinnersToken);
         }
     }
 }

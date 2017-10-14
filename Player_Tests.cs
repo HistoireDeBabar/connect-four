@@ -7,7 +7,7 @@ namespace Tests {
         [Fact]
         public void HumanHasToken() {
             var human = new HumanPlayer("*");
-            Assert.Equal(human.Token, "*");
+            Assert.Equal("*", human.Token);
         }
 
         [Fact]
